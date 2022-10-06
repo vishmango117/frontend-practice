@@ -2,6 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <!-- When we switch navigation we change the current nav from recipe to shopping and vice versa -->
+      <!-- When the switch is done based on the NgIf the corresponding component is rendered. -->
+      <!-- Very similar to using useState to conditionally render components. -->
       <app-recipebook *ngIf="currentNav === 'recipe'"></app-recipebook>
       <app-shoppinglist *ngIf="currentNav === 'shopping'"></app-shoppinglist>
     </div>

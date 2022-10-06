@@ -10,6 +10,10 @@ import { ShoppinglisteditComponent } from './shoppinglist/shoppinglistedit/shopp
 import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from 'src/services/shoppinglist.service';
+import { RecipeService } from 'src/services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ShoppinglisteditComponent,
     ShoppinglistComponent,
     HeaderComponent,
+    DropdownDirective,
   ],
-  imports: [BrowserModule, NgbModule],
-  providers: [],
+  imports: [BrowserModule, NgbModule, FormsModule],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

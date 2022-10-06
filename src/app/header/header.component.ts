@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   navigateToPage(location: string) {
+    // This navigationEmitter is present in the App component so that via the App component it will switch between recipe and shopping list.
     this.navigationEmitter.emit(location);
     console.log(`Navigating to ${location}`);
   }
