@@ -1,12 +1,13 @@
-<app-header (navigationEmitter)="switchNavigation($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <app-header></app-header>
       <!-- When we switch navigation we change the current nav from recipe to shopping and vice versa -->
       <!-- When the switch is done based on the NgIf the corresponding component is rendered. -->
       <!-- Very similar to using useState to conditionally render components. -->
-      <app-recipebook *ngIf="currentNav === 'recipe'"></app-recipebook>
-      <app-shoppinglist *ngIf="currentNav === 'shopping'"></app-shoppinglist>
+      <!-- <app-recipebook *ngIf="currentNav === 'recipe'"></app-recipebook>
+      <app-shoppinglist *ngIf="currentNav === 'shopping'"></app-shoppinglist> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

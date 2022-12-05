@@ -11,12 +11,14 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'Shepards Pie',
       'Pie Containing Beef',
       'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg',
       [new Ingredient('Beef', 20), new Ingredient('Pie Crust', 10)]
     ),
     new Recipe(
+      2,
       'Spaghetti Bolognaise',
       'Pasta with Tomato Sauce and Meatballs',
       'https://pbs.twimg.com/media/DuaWMrTXQAc2gLY.jpg',
@@ -25,6 +27,10 @@ export class RecipeService {
   ];
   getRecipes() {
     return this.recipes.slice();
+  }
+  getRecipe(id: number): Recipe {
+    const selectedRecipe = this.recipes.find((recipe) => recipe.id === id);
+    return selectedRecipe as Recipe;
   }
 
   addIngredientstoSL(ingredients: Ingredient[]) {

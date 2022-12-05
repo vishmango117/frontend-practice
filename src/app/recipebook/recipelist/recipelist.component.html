@@ -1,14 +1,15 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+    <button routerLink="new" class="btn btn-success">New Recipe</button>
   </div>
 </div>
 <div class="row">
-  <div
+  <a
+    [routerLink]="[singleRecipe.id]"
+    routerLinkActive="active"
     *ngFor="let singleRecipe of recipes"
-    (click)="selectRecipe(singleRecipe.id)"
     class="col-xs-12"
   >
     <app-recipeitem [recipe]="singleRecipe"></app-recipeitem>
-  </div>
+  </a>
 </div>
